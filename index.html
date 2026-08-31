@@ -1,18 +1,80 @@
-<!DOCTYPE html> 
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Javascript Racer</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-</head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8bd8d4">
+  <title>Featherbound — A Tiny Flight</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="flappy.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Featherbound home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>FEATHERBOUND</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" id="soundButton" type="button" aria-label="Mute sound" aria-pressed="false">
+          <span id="soundIcon" aria-hidden="true">♪</span>
+        </button>
+        <span class="edition">EDITION 01</span>
+      </div>
+    </header>
 
-<body> 
+    <section class="game-layout" aria-labelledby="gameTitle">
+      <aside class="intro-panel">
+        <p class="eyebrow">A TINY FLIGHT</p>
+        <h1 id="gameTitle">Find the gap.<br><em>Keep your nerve.</em></h1>
+        <p class="intro-copy">A small bird, an endless sky, and one simple rule: don’t stop flying.</p>
 
-  <ul>
-    <li><a href='v1.straight.html'>Version 1 - Straight</a></li>
-    <li><a href='v2.curves.html'>Version 2 - Curves</a></li>
-    <li><a href='v3.hills.html'>Version 3 - Hills</a></li>
-    <li><a href='v4.final.html'>Version 4 - Final</a></li>
-  </ul>
+        <dl class="score-card">
+          <div>
+            <dt>BEST FLIGHT</dt>
+            <dd id="bestScore">00</dd>
+          </div>
+          <div>
+            <dt>LAST FLIGHT</dt>
+            <dd id="lastScore">—</dd>
+          </div>
+        </dl>
 
-</body> 
+        <div class="controls-note">
+          <span class="key">SPACE</span>
+          <span class="or">OR</span>
+          <span class="key">CLICK</span>
+          <span>TO FLY</span>
+        </div>
+      </aside>
+
+      <div class="game-frame" id="gameFrame">
+        <canvas id="gameCanvas" width="480" height="640" aria-label="Featherbound game area"></canvas>
+        <div class="game-overlay" id="gameOverlay">
+          <div class="bird-emblem" aria-hidden="true"><span>◆</span></div>
+          <p class="overlay-kicker" id="overlayKicker">READY?</p>
+          <h2 id="overlayTitle">Take flight</h2>
+          <p id="overlayCopy">Thread the bird through each opening.<br>Every gap is one point.</p>
+          <button class="start-button" id="startButton" type="button">START FLIGHT <span>→</span></button>
+          <p class="overlay-hint">SPACE / CLICK</p>
+        </div>
+        <button class="pause-button" id="pauseButton" type="button" aria-label="Pause game">Ⅱ</button>
+      </div>
+
+      <aside class="side-note" aria-label="Game hint">
+        <span class="note-line"></span>
+        <p>THE WIND IS<br>ALWAYS CHANGING.</p>
+      </aside>
+    </section>
+
+    <footer>
+      <span>BUILT FOR THE BRAVE</span>
+      <span class="footer-bird" aria-hidden="true">⌁</span>
+      <span>© 2026 FEATHERBOUND</span>
+    </footer>
+  </main>
+  <script src="flappy.js"></script>
+</body>
 </html>
